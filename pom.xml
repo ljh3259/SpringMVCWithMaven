@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.test</groupId>
-    <artifactId>SpringMvc</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <modelVersion>4.0.0</modelVersion><!-- POM model version으로 언제나 4.0.0 -->
+    <groupId>com.test</groupId><!-- 프로젝트의 소유자인 조직이나 기관으로 패키지 형식의 이름을 가진다. -->
+    <artifactId>SpringMvc</artifactId><!-- 프로젝트 이름. 생성되는 jar나 war 파일에 이 이름이 붙여진다. -->
+    <version>1.0-SNAPSHOT</version><!-- 프로젝트 버전 -->
+    <packaging>war</packaging><!-- 프로젝트를 어떻게 패키지 할 것인가를 설정한다. 디폴트는 jar이고 웹 애플리케이션이면 war로 설정한다. -->
 
     <!--jdk1.8
     <properties>
@@ -41,6 +41,13 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>5.0.0.RELEASE</version>
+        </dependency>
+
+        <!-- aspectj -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.10</version>
         </dependency>
 
         <!-- Servlet -->
