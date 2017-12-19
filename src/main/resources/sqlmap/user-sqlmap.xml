@@ -3,12 +3,9 @@
 <mapper namespace="com.test.web.mapper.SampleMapper">
     <select id="getUserList" resultType="User">
 
-        SELECT  USR_LGN,
-        USR_NM ,
-        USR_EML,
-        USR_TEL,
-        CRT_DT
-        FROM  SYS_USR
+        SELECT  id
+              , name
+        FROM  users
     </select>
 
 </mapper>
