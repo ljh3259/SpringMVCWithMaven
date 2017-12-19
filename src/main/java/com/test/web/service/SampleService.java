@@ -1,6 +1,6 @@
-package com.test.service;
+package com.test.web.service;
 
-import com.test.domain.User;
+import com.test.web.domain.User;
 
 import java.util.List;
 

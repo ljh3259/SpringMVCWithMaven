@@ -1,6 +1,6 @@
-package com.test.mapper;
+package com.test.web.mapper;
 
-import com.test.domain.User;
+import com.test.web.domain.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

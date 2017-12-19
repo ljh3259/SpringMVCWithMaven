@@ -24,7 +24,7 @@
         <constructor-arg index="0" ref="sqlSessionFactory"/>
     </bean>
 
-    <mybatis:scan base-package="com.test.mapper"/>
+    <mybatis:scan base-package="com.test.web.mapper"/>
 
 
 </beans>

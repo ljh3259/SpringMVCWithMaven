@@ -11,6 +11,6 @@
 -->
 
     <typeAliases>
-        <package name="com.test.domain"/>
+        <package name="com.test.web.domain"/>
     </typeAliases>
 </configuration>
