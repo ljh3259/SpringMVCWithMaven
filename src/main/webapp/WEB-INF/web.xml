@@ -34,6 +34,17 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+    <!-- add spring-security filter -->
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>    <!-- 반드시 이 이름으로 주어야 한다 Spring Security 내부에서 이 이름 springSecurityFilterChain 으로 DelegatingFilterProxy클래스를 찾기때문에 다른 이름을 적용할 수가 없다. -->
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <!-- 해당 필터가 적용될 URL패턴을 모든 패턴을 의미하는 /*로 지정 -->
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 
     <filter>
         <filter-name>encodingFilter</filter-name>
