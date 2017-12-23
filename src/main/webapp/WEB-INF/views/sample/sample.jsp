@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-
+로그인 성공 샘플 페이지
 </body>
 </html>

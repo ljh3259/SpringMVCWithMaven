@@ -15,11 +15,32 @@
 
 
     <!-- auto-config는 자동설정 여부 이것을 자동으로 할경우 form 인증과 클라이언트 basic인증 그리고 logout 에 대한 기본적인 셋팅이 자동으로 설정-->
-    <http auto-config="true">
+    <!-- use-expressions="true"​ : spring security 의 표현식 언어 사용 여부 (각 속성의 access에 사용) -->
+    <http auto-config="true" use-expressions="true">
 
         <!-- intercept-url : spring Security가 감시 해야할 URL과 접근 가능한 권한을 정의하는 태그 -->
-        <intercept-url pattern="/admin/**"  access="ROLE_ADMIN"/>
-        <intercept-url pattern="/**"        access="ROLE_USER"/>
+        <!-- 주의 : 구체적인 pattern부터 작성해야한다. 예를들어 /** 전체 적용하는 pattern이 먼저나오면 여기서 전부 걸리지기 때문에 원하는 access접근 권한을 설정할수 없다.-->
+        <intercept-url pattern="/admin/signIn"  access="isAnonymous()"/>
+
+
+
+
+        <intercept-url pattern="/admin/**"  access="hasAnyRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/**"        access="hasAnyRole('ROLE_USER')"/>
+        <intercept-url pattern="/main.do"   access="permitAll()"/>
+
+
+        <!-- form 방식의 로그인을 하기 위해서는 http 태그안에 form-login 태그를 넣어야 한다 -->
+        <!-- custom login-page를 사용하기 위해서는 /admin/signIn URL에 접근이 가능해야한다-->
+        <!-- 만약 위 intercept-url /admin/signIn 이 없다면 아래에있는 /admin/** url인데 여기는 인증받은 회원만 접근이 가능하기에 사용할수가 없다 -->
+        <!-- 즉 그래서 접근 권한 access=isAnonymous() 인증받지 않은 사용자일때 true리턴 으로 들어갈수 있게 해줘야 사용 가능하다-->
+        <form-login
+            login-page="/admin/signIn"
+            username-parameter="loginId"
+            password-parameter="loginPassWord"
+            default-target-url="/"
+
+        />
 
     </http>
 
@@ -28,8 +49,8 @@
         <authentication-provider>
             <user-service>
 
-                <user name="user1"  password="user1"    authorities="ROLE_USER"/>
-                <user name="admin1" password="admin1"   authorities="ROLE_ADMIN"/>
+                <user name="user1"  password="user123"  authorities="ROLE_USER"/>
+                <user name="admin1" password="123456"   authorities="ROLE_ADMIN"/>
 
             </user-service>
         </authentication-provider>
