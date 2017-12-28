@@ -25,4 +25,6 @@
     <!-- 어노테이션 AspectJ를 이용하기 위한 설정 -->
     <aop:aspectj-autoproxy/>
     <beans:bean class="com.test.common.handler.AopLogHandler"/>
+
+
 </beans:beans>

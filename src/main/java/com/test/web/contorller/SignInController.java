@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class SignInController {
 
-    @RequestMapping(value = "/admin/signIn")
+    @RequestMapping(value = "/signIn")
     public ModelAndView signIn(){
         ModelAndView modelAndView = new ModelAndView();
 

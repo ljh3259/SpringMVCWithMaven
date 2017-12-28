@@ -18,7 +18,7 @@ public class SampleController {
     }
 
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/admin/sample")
     public ModelAndView home() {
 
         ModelAndView modelAndView = new ModelAndView();
