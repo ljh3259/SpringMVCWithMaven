@@ -18,11 +18,11 @@ public class SampleController {
     }
 
 
-    @RequestMapping(value = "/admin/sample")
+    @RequestMapping(value = "/admin/sample.do")
     public ModelAndView home() {
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("sample/sample");
+        modelAndView.setViewName("sample");
         modelAndView.addObject("resultList",sampleService.getUserList());
 
 
